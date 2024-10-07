@@ -1,6 +1,14 @@
 import React from "react";
 
-export const Button = (props: unknown) => {
+/**
+ * others will typically define the type inline within the fn param
+ * 
+ */
+interface Props {
+  className: string;
+}
+
+export const Button = (props: Props) => {
   return <button className={props.className}></button>;
 };
 

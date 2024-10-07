@@ -4,8 +4,14 @@ interface Props {
   className: string;
 }
 
-/* @ts-expect-error */
-export const Button = (props: Props) => {
+/**
+ * while defining a react.fc return removes return error
+ * on all fn calls within the app, but is purely stylistic
+ * 
+ * Now the return error only shows up on the actual btn component
+ */
+
+export const Button: React.FC<Props> = (props: Props) => {
   return {
     ohDear: "123",
   };

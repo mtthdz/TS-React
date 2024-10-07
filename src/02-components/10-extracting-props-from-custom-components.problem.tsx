@@ -8,11 +8,16 @@ export const NavBar = (props: {
   return <div>Some content</div>;
 };
 
+import { ComponentProps } from "react";
 // Your app:
 
 import { Equal, Expect } from "../helpers/type-utils";
 
-type NavBarProps = unknown;
+// this is a typical situation where we can't reuse props because
+// an external library is not exporting the prop types of its component
+// we can also pass existing components, not just HTML elements
+// this extracts its props
+type NavBarProps = ComponentProps<typeof NavBar>;
 
 type test = Expect<
   Equal<
