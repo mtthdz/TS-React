@@ -11,7 +11,9 @@ const fetchData = () => {
 };
 
 export const Component = () => {
-  const [data, setData] = useState();
+  // by default we don't need to define "undefined", TS will infer
+  // i.e. useState<Data | undefined>();
+  const [data, setData] = useState<Data>();
 
   useEffect(() => {
     fetchData().then((val) => {
