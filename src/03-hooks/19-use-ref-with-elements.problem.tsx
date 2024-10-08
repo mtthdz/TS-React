@@ -1,7 +1,8 @@
 import { useRef } from "react";
 
 export const Component = () => {
-  const ref = useRef<HTMLDivElement>();
+  // not intuitive, especially because the ref types show undefined
+  const ref = useRef<HTMLDivElement>(null);
 
   return <div ref={ref} />;
 };
